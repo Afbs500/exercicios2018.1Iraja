@@ -12,31 +12,27 @@
 
 
 
-<body ng-app="">
+<body ng-app="ex48">
+    <div ng-controller="ctrl48">
         
         <label>Digite um valor </label>    
-        <input type="text" name="valor" ng-model="valor">
-        <div ng-if="valor % 2 ==0">Par </div>
-        <div ng-if="valor % 2 !=0">Impar</div>
-
-
-
-       <!-- <button onclick="parImpar()">Ok</button>
-         <div id="saida"> </div> -->
-
+        <input type="text" name="valor" ng-model="valor">  
+        {{saida(valor)}} {{valor}}     
+</div>0
 </body>
 </html>
-<!--<script>
-        function parImpar(){
-            var num = document.getElementById("valor").value
-            if (num % 2 == 0){
-                document.getElementById("saida").innerHTML = "Par";
-
-            }   else {
-                document.getElementById("saida").innerHTML = "Impar";
-            }
-            
+<script>
+    var app = angular.module("ex48" , [])
+    app.controller("ctrl48" , function($scope){
+        $scope.saida = function(valor){
+        if (valor % 2 == 0){
+            return "par";
 
         }
 
-</script> -->
+        return "impar";
+    }
+    })
+
+
+</script>
